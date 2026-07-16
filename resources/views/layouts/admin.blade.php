@@ -4,6 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="csrf-token" content="{{ csrf_token() }}">
+    
+    <!-- ✅ TAMBAHAN: Favicon untuk Tab Browser -->
+    <link rel="icon" type="image/png" href="{{ asset('favicon.png') }}">
+    <link rel="apple-touch-icon" href="{{ asset('favicon.png') }}">
+    
     <title>@yield('title', 'Admin Dashboard')</title>
     
     <!-- Tailwind CSS CDN -->
@@ -54,11 +59,9 @@
                 <a href="{{ route('admin.orders.index') }}" class="nav-item {{ request()->routeIs('admin.orders.*') ? 'active' : 'text-gray-600' }} flex items-center px-4 py-3 rounded-lg font-medium transition">
                     <i class="fas fa-shopping-bag w-5 mr-3"></i> Pesanan
                 </a>
-                <!-- UPDATED: Analitik sekarang AKTIF dan bisa diklik -->
                 <a href="{{ route('admin.analytics') }}" class="nav-item {{ request()->routeIs('admin.analytics') ? 'active' : 'text-gray-600' }} flex items-center px-4 py-3 rounded-lg font-medium transition">
                     <i class="fas fa-chart-line w-5 mr-3"></i> Analitik
                 </a>
-                <!-- Pengaturan mengarah ke settings -->
                 <a href="{{ route('admin.settings.index') }}" class="nav-item {{ request()->routeIs('admin.settings.*') ? 'active' : 'text-gray-600' }} flex items-center px-4 py-3 rounded-lg font-medium transition">
                     <i class="fas fa-cog w-5 mr-3"></i> Pengaturan
                 </a>
