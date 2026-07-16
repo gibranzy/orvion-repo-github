@@ -3,6 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- ✅ TAMBAHAN: Favicon untuk Tab Browser -->
+    <link rel="icon" type="image/png" href="{{ asset('favicon.png') }}">
+    <link rel="apple-touch-icon" href="{{ asset('favicon.png') }}">
+    
     <title>Selamat Datang di Orvion Mart</title>
     
     <!-- Tailwind CSS CDN -->
@@ -95,7 +100,7 @@
         
         <div class="max-w-6xl mx-auto w-full">
             
-            <!-- Logo Section (FIXED: Tanpa Background, Ukuran Lebih Besar) -->
+            <!-- Logo Section -->
             <div class="text-center mb-12">
                 <div class="mb-6 inline-block">
                     <img src="{{ asset('images/orvion-logo.png') }}" 
