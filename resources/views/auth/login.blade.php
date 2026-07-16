@@ -3,6 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+    
+    <!-- ✅ TAMBAHAN: Favicon untuk Tab Browser -->
+    <link rel="icon" type="image/png" href="{{ asset('favicon.png') }}">
+    <link rel="apple-touch-icon" href="{{ asset('favicon.png') }}">
+    
     <title>Login - Orvion Mart</title>
     
     <!-- Tailwind CSS CDN -->
@@ -119,7 +125,7 @@
         
         <div class="p-8 sm:p-10">
             
-            <!-- Logo & Header (LOGO ORVION - TANPA BACKGROUND, UKURAN BESAR) -->
+            <!-- Logo & Header -->
             <div class="text-center mb-8">
                 <div class="mb-6 inline-block">
                     <img src="{{ asset('images/orvion-logo.png') }}" 
