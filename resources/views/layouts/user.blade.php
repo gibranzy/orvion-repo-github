@@ -4,6 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="csrf-token" content="{{ csrf_token() }}">
+    
+    <!-- ✅ TAMBAHAN: Favicon untuk Tab Browser -->
+    <link rel="icon" type="image/png" href="{{ asset('favicon.png') }}">
+    <link rel="apple-touch-icon" href="{{ asset('favicon.png') }}">
+    
     <title>@yield('title', 'User Dashboard')</title>
     
     <!-- Tailwind CSS CDN -->
@@ -64,7 +69,6 @@
                         <span class="ml-auto bg-red-500 text-white text-xs px-2 py-0.5 rounded-full">{{ auth()->user()->wishlists()->count() }}</span>
                     @endif
                 </a>
-                <!-- UPDATED: Pengaturan mengarah ke settings -->
                 <a href="{{ route('user.settings.index') }}" class="nav-item {{ request()->routeIs('user.settings.*') ? 'active' : 'text-gray-600' }} flex items-center px-4 py-3 rounded-lg font-medium transition">
                     <i class="fas fa-cog w-5 mr-3"></i> Pengaturan
                 </a>
@@ -160,7 +164,7 @@
                             </svg>
                         </button>
                         
-                        <!-- Dropdown Menu (UPDATED) -->
+                        <!-- Dropdown Menu -->
                         <div x-show="open" 
                              @click.away="open = false"
                              class="absolute right-0 mt-2 w-48 bg-white rounded-lg shadow-lg py-2 z-50"
@@ -211,7 +215,6 @@
             document.getElementById('userNotifications').classList.toggle('hidden');
         }
 
-        // Close notifications when clicking outside
         document.addEventListener('click', function(event) {
             const notifBtn = document.getElementById('userNotificationButton');
             const notifBox = document.getElementById('userNotifications');
@@ -232,7 +235,6 @@
 
             searchInput.addEventListener('input', function() {
                 const query = this.value.trim();
-                
                 clearTimeout(searchTimeout);
                 
                 if (query.length < 2) {
