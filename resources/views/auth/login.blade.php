@@ -149,18 +149,18 @@
             <form method="POST" action="{{ route('login') }}" class="space-y-5">
                 @csrf
 
-                <!-- Email -->
+                <!-- Email / Username -->
                 <div>
                     <label for="email" class="block text-sm font-semibold text-gray-700 mb-2">
-                        Alamat Email
+                        Email atau Username / Role
                     </label>
                     <div class="input-wrapper">
-                        <input id="email" type="email" name="email" value="{{ old('email') }}" 
-                               placeholder="nama@email.com"
+                        <input id="email" type="text" name="email" value="{{ old('email') }}" 
+                               placeholder="Email, username, atau role (contoh: admin)"
                                class="input-field w-full px-4 py-3 pl-11 border-2 border-gray-200 rounded-xl focus:ring-0 focus:border-indigo-500 outline-none transition text-gray-700" 
                                required autofocus autocomplete="username">
                         <span class="input-icon">
-                            <i class="fas fa-envelope"></i>
+                            <i class="fas fa-user"></i>
                         </span>
                     </div>
                     @error('email')
